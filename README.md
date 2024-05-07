@@ -2,7 +2,7 @@
 
 # biblioteca_virtual API com PHP e Laravel
 
-Este projeto  é um projeto a qual você poderá ler um livro da sua casa , mais para isso você terá que cadastrar o livro
+Este projeto biblioteca_virtual é um projeto a qual você poderá ler um livro da sua casa , mais para isso você terá que cadastrar o livro
 
 ## Requisitos
 
