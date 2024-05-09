@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\livroFormRequest;
+use App\Http\Requests\livrosFormRequestUpdate;
 use App\Models\livros;
 use Illuminate\Http\Request;
 
@@ -65,7 +66,7 @@ public function pesquisarporTitulo(Request $request){
     ]);
 }
 
-public function update(Request $request){
+public function update(livrosFormRequestUpdate $request){
     $livro = livros::find($request->id);
 
     if(!isset($livro)){
