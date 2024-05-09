@@ -19,7 +19,7 @@ return new class extends Migration
         $table-> string('autor', 50)->nullable(false);
         $table-> date('data_de_lancamento')->nullable(false);
         $table-> string('editora',50 )->nullable(false);
-        $table-> date('sinopse',1000 )->nullable(false);
+        $table-> string('sinopse',1000 )->nullable(false);
         $table-> string('genero',50)->nullable(false);
         $table-> string('avaliacao',1000)->nullable(false);
         $table->timestamps();

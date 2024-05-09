@@ -8,24 +8,24 @@ use Illuminate\Http\Request;
 
 class livrosController extends Controller
 {
-public function store(livroFormRequest $request){
-    $livro = livros::created([
-        'titulo'=>$request->titulo,
-        'autor'=>$request->autor,
-        'data_de_lancamento'=>$request->data_de_lancamento,
-        'editora'=>$request->editora,
-        'sinopse'=>$request->sinopse,
-        'genero'=>$request->genero,
-        'avaliacao'=>$request->avaliacao,
-    ]);
-
-    return response()->json([
-     "success"=>true,
-     "message"=>"livro cadastrado com sucesso",
-     "data"=>$livro
-    ],200);
-
-}
+    public function store(livroFormRequest $request){
+        $livro = livros::create([
+            'titulo' => $request->titulo,
+            'autor' => $request->autor,
+            'data_de_lancamento'=>$request->data_de_lancamento,
+            'editora'=>$request->editora,
+            'sinopse'=>$request->sinopse,
+            'genero'=>$request->genero,
+            'avaliacao'=>$request->avaliacao,
+          
+            
+        ]);
+        return response()->json([
+            "succes" => true,
+            "message" =>"Livro Cadastrado com sucesso",
+            "data" => $livro
+        ],200);
+    }
 public function retornarTodos()
 {
     $livro= livros::all();
@@ -34,14 +34,14 @@ public function retornarTodos()
         'data'=>$livro
     ]);
 }
-public function pesquisarPorId($id){
+public function pesquisaPorId($id){
     $livro= livros::find($id);
 
 
     if($livro ==  null){
         return response()->json([
             'status'=>  false,
-            'message'=>"Usuário não encontrado"
+            'message'=>"Livro  não encontrado"
         ]);
     }
     return response()->json([
@@ -50,7 +50,7 @@ public function pesquisarPorId($id){
     ]);
 }
 
-public function pesquisarporLivro(Request $request){
+public function pesquisarporTitulo(Request $request){
     $livro = livros::where('titulo','like' ,'%'.$request->nome. '%')->get();
 
     if(count($livro)>0){

@@ -26,7 +26,7 @@ class livroFormRequest extends FormRequest
          'autor'=>'required|max:50|min:1',
          'data_de_lancamento'=>'required|date',
          'editora'=>'required|max:50|min:1',
-         'sinopse'=>'required|max:1000|min:200',
+         'sinopse'=>'required|max:1000|min:1',
          'genero'=>'required|max:50|min:1',
          'avaliacao'=>'max:1000|min:1',
 
@@ -48,7 +48,7 @@ class livroFormRequest extends FormRequest
          'editora.min'=>'o campo editora deve conter no minimo 1 caracteres',
          'sinopse.required'=>'o campo sinopse e obrigatorio',
          'sinopse.max'=>'o campo sinopse deve conter no maximo 1000 caracteres',
-         'sinopse.min'=>'o campo sinopse deve conter no minimo 200 caracteres',
+         'sinopse.min'=>'o campo sinopse deve conter no minimo 1 caracteres',
          'genero.required'=>'o campo genero e obrigatorio',
          'genero.max'=>'o campo genero deve conter no maximo 50 caracteres',
          'genero.min'=>'o campo genero deve conter no minimo 1 caracteres',
