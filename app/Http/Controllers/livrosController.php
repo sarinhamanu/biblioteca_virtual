@@ -29,11 +29,20 @@ class livrosController extends Controller
     }
 public function retornarTodos()
 {
-    $livro= livros::all();
-    return response()->json([
-        'status'=> true,
-        'data'=>$livro
-    ]);
+    
+        $Livros = livros::all();
+        $LivrosComImagem = $Livros->map(function ($Livros) {
+            return [
+                'titulo' => $Livros->titulo,
+                'autor' => $Livros->autor,
+                'data_de_lancamento' => $Livros->data_de_lancamento,
+                'editora' => $Livros->editora,
+                'sinopse' => $Livros->sinopse,
+                'genero' => $Livros->genero,
+                'avaliacao' => $Livros->avaliacao
+            ];
+        });
+        return response()->json($LivrosComImagem);
 }
 public function pesquisaPorId($id){
     $livro= livros::find($id);
